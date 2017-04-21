@@ -1,13 +1,13 @@
 function [potential_matches, scores] = getMatches(f1, d1, f2, d2)
 %% Description
 % [Input]
-% f1: figure 1, size: original image size
-% d1: descriptor of f1, size: #keypoints * 1
-% f2: figure 1, size: original image size
-% d2: descriptor of f1, size: #keypoints * 1
+%   f1: figure 1, size: original image size
+%   d1: descriptor of f1, size: #keypoints * 1
+%   f2: figure 1, size: original image size
+%   d2: descriptor of f1, size: #keypoints * 1
 % [Output]
-% potential_matches:
-% scores:
+%   potential_matches:
+%   scores:
  
 [matches, scores] = vl_ubcmatch(d1, d2); % 2 * #matches
 
