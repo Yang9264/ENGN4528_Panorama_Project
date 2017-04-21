@@ -6,6 +6,7 @@ function [panorama]=main(filename)
     ...%     6              7               8unorder            9      10
     'GrandCanyon2'};
     % 11  
+    
     if isnumeric(filename)
         which=filename;
         path='imgs';
@@ -60,4 +61,4 @@ function [panorama]=main(filename)
     imwrite(panorama,['./results/',datasets{which},'.jpg']);
     if unordered(which)
         imwrite(panorama,['./results/',datasets{which},'from unordered.jpg']);
-    end
+  end
