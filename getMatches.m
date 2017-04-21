@@ -9,7 +9,7 @@ function [potential_matches, scores] = getMatches(f1, d1, f2, d2)
 %   potential_matches:
 %   scores:
  
-[matches, scores] = vl_ubcmatch(d1, d2); % 2 * #matches
+[matches, scores] = vl_ubcmatch(d1, d2); % size: 2 * #matches;
 
 numMatches = size(matches,2); % get #matches 
 pairs = nan(numMatches, 3, 2);
