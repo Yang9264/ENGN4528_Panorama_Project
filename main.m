@@ -71,4 +71,7 @@ function [panorama]=main(filename)
     imwrite(panorama,['./results/',datasets{which},'.jpg']);
     if unordered(which)
         imwrite(panorama,['./results/',datasets{which},'from unordered.jpg']);
-  end
+    end
+    imshow(panorama);
+    % Push to Github
+end

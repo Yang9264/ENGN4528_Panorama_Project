@@ -19,6 +19,7 @@ for i = 2 : nImgs %
     f1 = f2;
     d1 = d2;
     [f2, d2] = getSIFTFeatures(imgs(:, :, :, i), Thresh);
+%      [f2, d2,locs] = sift(imgs(:, :, :, i));
     [matches, ~] = getMatches(f1, d1, f2, d2);
     [T(:, :, i),~] = RANSAC(confidence, inlierRatio, 1, matches, epsilon);
 end

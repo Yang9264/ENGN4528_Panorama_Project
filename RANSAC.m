@@ -1,7 +1,7 @@
 function [T,MaxInliers] = RANSAC(confidence, inliner_Ratio, Npairs, data, epsilon)
 
 m = ceil(log(1 - confidence) / log(1 - inliner_Ratio^Npairs)); % calculate number of loops
-NPoints = size(data, 1);
+NPoints = size(data, 1); % #matches
 MaxInliers = 0;
 
 A = zeros(2*Npairs, 2);
@@ -27,7 +27,7 @@ for i = 1:m
     T = [1 0 t(1); 0 1 t(2); 0 0 1];
     
     
-    p_prime = T * data(:,:,2)';
+    p_prime =  T * data(:,:,2)';
     error = data(:,:,1)' - p_prime;
     SE = error .^ 2;
     SSE = sum(SE);
