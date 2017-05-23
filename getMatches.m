@@ -9,7 +9,20 @@ function [potential_matches, scores] = getMatches(f1, d1, f2, d2)
 %   potential_matches:
 %   scores: each pair's difference
  
-[matches, scores] = vl_ubcmatch(d1, d2); % size: 2 * #matches; 
+[matches1, scores1] = vl_ubcmatch(d1, d2); % size: 2 * #matches; 
+[matches] = matchFunction(d1', d2'); % size: 2 * #matches; 
+matches = matches';
+% matches(1,:) = matches( ~ isnan(matches(1,:)));
+ 
+for num = 1:size(matches,2)
+    fprintf('num is %d',num);
+    if ~isnan(matches(1,num))
+%         matches(:,num)=matches(:,num);
+          matches(:,num)=0;
+    else
+        matches(:,num)=[];
+    end
+end
 
 numMatches = size(matches,2); % get #matches 
 pairs = nan(numMatches, 3, 2);

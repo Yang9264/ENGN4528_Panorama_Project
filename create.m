@@ -50,7 +50,7 @@ else
         maxY = max(maxY, absoluteTrans(1,3,i)+height);
         maxX = max(maxX, absoluteTrans(2,3,i)+width);
         minY = min(minY, absoluteTrans(1,3,i));
-        minX=min(minX,absoluteTrans(2,3,i));
+        minX = min(minX, absoluteTrans(2,3,i));
     end
     panorama_h = ceil(maxY) - floor(minY) + 1;
     panorama_w = ceil(maxX)-floor(minX) +1;
